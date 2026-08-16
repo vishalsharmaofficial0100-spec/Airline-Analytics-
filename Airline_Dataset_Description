@@ -1,0 +1,195 @@
+🔍 Key Data Fields
+
+The analysis works with fields such as:
+
+Airline
+Departure Country / Continent
+Destination Country / Continent
+Flight Status
+Flight Duration
+Ticket Class
+Ticket Price
+Booking Status
+Passenger Age
+Passenger Gender
+Passenger Nationality
+Date Fields
+🧠 Problem-Solving Workflow
+1. Understand the Business Problem
+
+Each business question is converted into a clear data question before writing SQL.
+
+2. Understand the Dataset
+
+Review tables, columns, relationships, and data types before starting the analysis.
+
+3. Define Business Rules
+
+Examples:
+
+Use confirmed tickets for revenue unless otherwise specified.
+Correctly classify delayed, cancelled, and on-time flights.
+Select the appropriate date field for time-based analysis.
+Avoid counting the same passenger or ticket multiple times.
+4. Break the Problem into Smaller Questions
+
+Examples include:
+
+Total flights by airline
+Delayed flights by airline
+Revenue by airline
+Revenue by route
+Booking trends over time
+Passenger mix by ticket class
+Passenger demographics
+5. Create a Base Query / CTE
+
+A reusable base CTE is used to combine the required tables and standardize the fields used throughout the analysis.
+
+This improves:
+
+Query readability
+Logic consistency
+Maintainability
+Reusability
+6. Solve One Metric at a Time
+
+Each business question is solved separately using appropriate SQL techniques.
+
+7. Validate Results
+
+Results are checked for:
+
+Duplicate joins
+Incorrect revenue calculations
+Incorrect filters
+Wrong date ranges
+Unexpected totals
+8. Interpret the Results
+
+The final step is to explain what the SQL output means from a business perspective.
+
+🛠️ SQL Concepts Used
+
+This project demonstrates:
+
+SELECT
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+JOIN
+CASE WHEN
+COUNT()
+SUM()
+AVG()
+CTE
+Window Functions
+LAG()
+DENSE_RANK()
+DATE_TRUNC()
+NULLIF()
+Filtering and ranking
+Business segmentation
+📊 Business Analysis Areas
+
+The SQL analysis covers areas such as:
+
+Revenue Analysis
+Revenue by airline
+Revenue by route
+Revenue by continent
+Revenue by ticket class
+Revenue contribution by passenger segments
+Airline Performance
+Flight volume
+Revenue performance
+Market share
+Airline ranking
+Operational performance
+Operations
+On-time flights
+Delayed flights
+Cancelled flights
+Route-level operational risk
+Network reliability
+Customer Analysis
+Passenger demographics
+Ticket class distribution
+Business-class adoption
+Passenger nationality / region analysis
+Booking Analysis
+Booking trends
+Confirmed vs pending bookings
+Cancellation impact
+Unrealized booking value
+Route Analysis
+Long-haul vs short-haul performance
+Intra-continent vs inter-continent travel
+Revenue by route
+Strategic route opportunities
+📁 Repository Structure
+airline-analytics-sql/
+│
+├── airline_analytics_solved_questions.sql
+├── README.md
+└── ...
+Files
+
+airline_analytics_solved_questions.sql
+
+Contains the solved SQL business questions and analytical queries.
+
+README.md
+
+Documents the project objective, dataset structure, methodology, SQL techniques, and portfolio workflow.
+
+💡 Key Learning
+
+This project demonstrates that SQL analysis is more than writing queries.
+
+The complete workflow is:
+
+Business Question
+        ↓
+Understand Data
+        ↓
+Define Business Rules
+        ↓
+Write SQL
+        ↓
+Validate Results
+        ↓
+Analyze Output
+        ↓
+Generate Business Insight
+        ↓
+Recommend Action
+
+The focus is on connecting technical SQL skills with business decision-making.
+
+🚀 Future Improvements
+
+Possible future additions include:
+
+Dataset files
+ER diagram /database schema
+Business question document
+Query result screenshots
+SQL performance optimization
+Power BI dashboard
+Executive summary of findings
+👨‍💻 Skills Demonstrated
+
+SQL | Data Analysis | Business Intelligence | Data Validation | CTEs | JOINs | Aggregations | Window Functions | Data Interpretation | GitHub Portfolio Development
+
+📌 Project Purpose
+
+This project was created as a SQL data analytics portfolio project to demonstrate the ability to:
+
+Understand a business problem
+Explore relational data
+Build accurate SQL queries
+Validate analytical results
+Extract business insights
+Present the analysis professionally
