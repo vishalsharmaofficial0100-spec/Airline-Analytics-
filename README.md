@@ -1,81 +1,82 @@
-# Airline Commercial & Operations Analytics — SQL
+# Airline Commercial & Operations Analytics | SQL
 
-A self-directed SQL case study designed to answer **40 business questions** across revenue, route performance, airline reliability, passenger segments, booking conversion, delays, cancellations, and operational risk.
+A self-directed SQL case study covering **40 business questions** across revenue, routes, airline performance, passenger segments, bookings, delays, cancellations, and operational risk.
 
-> **Portfolio status:** Query framework completed. The repository does not yet contain the source dataset or executed result outputs, so this project demonstrates analytical design and SQL logic—not validated business findings.
+**Project status:** The SQL analysis framework is complete. Dataset files and executed results are not included, so this repository demonstrates analytical thinking, KPI design, and SQL capability rather than validated business findings.
 
-## Business Objective
+## Business Goal
 
-Build a reusable analytical layer that helps airline stakeholders evaluate:
+Create a reusable analytical framework that helps airline stakeholders answer four questions:
 
-- revenue mix and unrealized booking value
-- airline and route performance
-- delays, cancellations, and network reliability
-- passenger and ticket-class segments
-- route-expansion opportunities and operational risk
+- Where does revenue come from?
+- Which airlines and routes perform best?
+- Where are delays, cancellations, and booking losses concentrated?
+- Which customer segments and routes present growth opportunities?
 
-## Analytical Scope
+## Analysis Areas
 
-| Decision area | Example questions |
+| Area | Questions addressed |
 |---|---|
-| Commercial performance | Which airlines, routes, continents, and ticket classes drive revenue? |
-| Customer strategy | Which passenger segments contribute the most value? |
-| Operations | Which airlines and routes have the highest disruption rates? |
-| Growth | Where is demand relatively low but average ticket value high? |
-| Risk | Which routes combine elevated delay and cancellation rates? |
+| Revenue | Revenue by airline, route, continent, class, and passenger segment |
+| Customer | Passenger mix, age bands, nationality, and business-class adoption |
+| Operations | On-time performance, disruptions, duration consistency, and bottlenecks |
+| Growth | Route-expansion candidates and underserved high-value markets |
+| Risk | Cancellation impact, pending-booking age, and route-level risk flags |
 
-## Repository Contents
+## Repository Files
 
 - [`airline_analytics_solved_questions.sql`](./airline_analytics_solved_questions.sql) — 40 documented SQL analyses
-- [`README.md`](./README.md) — recruiter-facing project summary
+- [`README.md`](./README.md) — business context, assumptions, and validation plan
 
-## Data Model Assumptions
+## Data Model
 
-The SQL uses three conceptual tables:
+The queries use three conceptual tables:
 
-- **flights** — airline, route, status, duration, and flight date
-- **tickets** — booking status, class, price, seat, and booking date
-- **passengers** — nationality, region, gender, and age
+- **flights:** airline, route, status, duration, and flight date
+- **tickets:** booking status, class, price, seat, and booking date
+- **passengers:** nationality, region, gender, and age
 
 Relationships:
 
-- `flights.flight_id = tickets.flight_id`
-- `tickets.passenger_id = passengers.passenger_id`
+```text
+flights.flight_id = tickets.flight_id
+tickets.passenger_id = passengers.passenger_id
+```
 
-The column names and SQL dialect must be aligned with the actual source database before execution.
+Field names and SQL syntax must be aligned with the source database before execution.
 
-## SQL Skills Demonstrated
+## SQL Techniques
 
-- multi-table `LEFT JOIN`
-- reusable CTE-based analytical layer
-- conditional aggregation and business-rule filters
-- window functions: `LAG`, `DENSE_RANK`, and share-of-total calculations
-- date aggregation with `DATE_TRUNC`
-- segmentation with `CASE`
-- data-quality safeguards using `NULLIF`
-- operational and commercial KPI design
+- CTEs and multi-table joins
+- conditional aggregation
+- window functions such as `LAG` and `DENSE_RANK`
+- share-of-total and ranking calculations
+- date-based trend analysis
+- customer and route segmentation
+- null and divide-by-zero safeguards
+- commercial and operational KPI design
 
-## Important Business Rules
+## Business Rules and Limitations
 
-- Revenue includes only **confirmed bookings**, unless a query explicitly states otherwise.
-- Flights use distinct `flight_id` counts to reduce duplication after ticket-level joins.
-- Cancelled-booking impact is an **estimate**, not accounting profit.
-- “Profitability” queries currently calculate revenue because cost data is unavailable.
-- The network-health score is an illustrative composite and requires stakeholder-approved weights.
+- Revenue uses confirmed bookings unless stated otherwise.
+- Flights are counted using distinct `flight_id` values to reduce duplication after joins.
+- Cancellation impact represents estimated lost booking value, not accounting profit.
+- “Profitability” currently refers to revenue because cost data is unavailable.
+- The network-health score is illustrative and requires stakeholder-approved weights.
 
-## Validation Required Before Claiming Results
+## Validation Plan
 
-1. Replace assumed field names with the actual schema.
-2. Confirm the SQL dialect supports `FILTER`, `DATE_TRUNC`, and `STDDEV`.
-3. Test join cardinality and duplicate counts.
-4. Reconcile confirmed-ticket revenue to a source total.
-5. Review nulls, invalid statuses, price outliers, and date coverage.
-6. Save executed outputs before publishing findings.
+Before publishing findings:
 
-## Next Development Milestone
+1. Match the assumed fields to the actual schema.
+2. Confirm SQL-dialect compatibility.
+3. test join cardinality and duplicate counts.
+4. Reconcile confirmed-booking revenue with source totals.
+5. Review nulls, invalid statuses, outliers, and date coverage.
+6. Save query outputs and document verified findings.
 
-Add a reproducible dataset/schema, an ER diagram, validated query outputs, three to five quantified findings, and dashboard screenshots. Those additions will convert this SQL framework into a complete recruiter-ready case study.
+## Next Step
 
-## Tools
+Add a reproducible dataset, ER diagram, executed query outputs, quantified insights, and dashboard screenshots to complete the case study.
 
-SQL · CTEs · Joins · Window Functions · KPI Design · Data Validation
+**Tools:** SQL · CTEs · Joins · Window Functions · KPI Design · Data Validation
