@@ -70,7 +70,7 @@ Before publishing findings:
 
 1. Match the assumed fields to the actual schema.
 2. Confirm SQL-dialect compatibility.
-3. test join cardinality and duplicate counts.
+3. Test join cardinality and duplicate counts.
 4. Reconcile confirmed-booking revenue with source totals.
 5. Review nulls, invalid statuses, outliers, and date coverage.
 6. Save query outputs and document verified findings.
